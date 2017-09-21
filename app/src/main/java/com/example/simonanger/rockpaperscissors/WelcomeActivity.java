@@ -13,8 +13,8 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
     }
 
-    public void onBeginButtonClicked(View button) {
-        Intent intent = new Intent(this, RockPaperScissorsActivity.class);
+    public void onOnePlayerBeginButtonClicked(View button) {
+        Intent intent = new Intent(this, OnePlayerNameInputActivity.class);
         startActivity(intent);
     }
 }

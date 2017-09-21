@@ -4,4 +4,5 @@
     <string name="select_guide_text">Select your hand from an image above</string>
     <string name="onePlayerHint">Player one enter your name</string>
     <string name="player_one_click_here_hint">Click here</string>
+    <string name="how_many_players">How many players?</string>
 </resources>
