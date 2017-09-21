@@ -17,4 +17,9 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, OnePlayerNameInputActivity.class);
         startActivity(intent);
     }
+
+    public void onTwoPlayerBeginButtonClicked(View button) {
+        Intent intent = new Intent(this, TwoPlayerNameInputActivity.class);
+        startActivity(intent);
+    }
 }

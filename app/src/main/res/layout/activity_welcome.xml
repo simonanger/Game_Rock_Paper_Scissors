@@ -37,18 +37,19 @@
         app:srcCompat="@drawable/homebanner" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/two_begin_button"
         android:layout_width="140dp"
         android:layout_height="55dp"
+        android:layout_marginBottom="59dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="onTwoPlayerBeginButtonClicked"
         android:text="2 Players"
         android:textSize="18sp"
-        app:layout_constraintLeft_toRightOf="@+id/one_begin_button"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="59dp" />
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintLeft_toRightOf="@+id/one_begin_button"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/home_question"

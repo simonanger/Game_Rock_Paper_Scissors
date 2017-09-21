@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 
-public class RockPaperScissorsActivity extends AppCompatActivity {
+
+public class TwoPlayerRockPaperScissorsActivity extends AppCompatActivity {
 
     RockPaperScissorsGame game;
 
@@ -17,15 +19,16 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
     ImageButton scissorsButton;
 
     TextView resultText;
+    TextView selectGuideText;
 
-
+    ArrayList<HandType> playerChoices;
     String setFirstName;
-
+    String setSecondName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rock_paper_scissors);
+        setContentView(R.layout.activity_two_player_rock_paper_scissors);
 
         game = new RockPaperScissorsGame();
 
@@ -34,27 +37,45 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         scissorsButton = (ImageButton) findViewById(R.id.scissors_button);
 
         resultText = (TextView) findViewById(R.id.result_text);
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
+        selectGuideText = (TextView) findViewById(R.id.select_guide_text);
 
+        Bundle extras = getIntent().getExtras();
         setFirstName = extras.getString("playerOneName");
+        setSecondName = extras.getString("playerTwoName");
+
+        if (setFirstName.length() == 0) {
+            setFirstName = "Player one";
+        }
+
+        if (setSecondName.length() == 0) {
+            setSecondName = "Player two";
+        }
+
+        playerChoices = new ArrayList<>();
 
     }
 
     public void onHandButtonClicked(View imageButton) {
 
-        if (setFirstName.length() == 0) {
-            setFirstName = "Player one";
-        }
+        // if playerChoices is empty, just add a choice
+        // else if playerChoices already has one choice, add a choice, then do the game compare bit
 
         HandType playerHand = null;
         if (imageButton == rockButton) playerHand = HandType.ROCK;
         if (imageButton == paperButton) playerHand = HandType.PAPER;
         if (imageButton == scissorsButton) playerHand = HandType.SCISSORS;
 
-        HandType computerHand = game.generateComputerHand();
+        if (playerChoices.size() == 0) {
+            playerChoices.add(playerHand);
+            selectGuideText.setText("Player two, " +
+                    "select your hand from the images above.");
+            return;
+        }
 
-        int result = game.playHand(playerHand, computerHand);
+        playerChoices.add(playerHand);
+
+
+        int result = game.playHand(playerChoices.get(0), playerChoices.get(1));
 
         String winnerMessage;
 
@@ -64,7 +85,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
             case 1:
                 winnerMessage = setFirstName + " wins!"; break;
             case 2:
-                winnerMessage = "Computer wins! Better luck next time."; break;
+                winnerMessage = setSecondName + " wins!"; break;
             default:
                 winnerMessage = "ERROR.";
         }
@@ -74,15 +95,28 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
             return;
         }
 
-        String resultMessage = "You played " + playerHand.name() + "!\n"
-                + "Computer played " + computerHand.name() + "!\n"
+        String resultMessage = setFirstName + " played " + playerChoices.get(0).name() + "!\n"
+                + setSecondName + " played " + playerChoices.get(1).name() + "!\n"
                 + winnerMessage;
 
 
 
         resultText.setText(resultMessage);
+        selectGuideText.setText("To play again, pass back to player one and make a choice");
     }
 }
+
+
+//    Intent intent = new Intent(this, TwoPlayerRockPaperScissorsActivity.class);
+//
+//    String playerOneName = playerOneNameText.getText().toString();
+//    String playerTwoName = playerTwoNameText.getText().toString();
+//
+//    Bundle extras = new Bundle();
+//        extras.putString("playerOneName",playerOneName);
+//                extras.putString("playerTwoName",playerTwoName);
+//                intent.putExtras(extras);
+//                startActivity(intent);
 
 //
 //

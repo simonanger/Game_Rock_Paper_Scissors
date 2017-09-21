@@ -17,19 +17,19 @@ public class RockPaperScissorsGame {
         winners.put(HandType.SCISSORS, HandType.PAPER);
     }
 
-    public int playHand(HandType playerHand, HandType computerHand) {
+    public int playHand(HandType playerHand, HandType playerTwoHand) {
         if (playerHand == null) return -1;
 
-        if (playerHand == computerHand) return 0;
+        if (playerHand == playerTwoHand) return 0;
 
-        if (winners.get(playerHand) == computerHand) return 1;
+        if (winners.get(playerHand) == playerTwoHand) return 1;
 
-        if (winners.get(computerHand) == playerHand) return 2;
+        if (winners.get(playerTwoHand) == playerHand) return 2;
 
         return -1;
     }
 
-    public HandType generateComputerHand() {
+    public HandType generatePlayerTwoHand() {
         Random random = new Random();
         int randomNumber = random.nextInt(3);
         return HandType.values()[randomNumber];

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.simonanger.rockpaperscissors.RockPaperScissorsActivity"
+    tools:context="com.example.simonanger.rockpaperscissors.TwoPlayerRockPaperScissorsActivity"
     android:background="#929284">
 
     <ImageButton
@@ -58,15 +58,16 @@
         android:id="@+id/select_guide_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:layout_marginTop="50dp"
-        android:text="@string/select_guide_text"
+        android:text="@string/select_guide_text_player_one"
+        android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paper_button" />
+        app:layout_constraintTop_toBottomOf="@+id/paper_button"
+        app:layout_constraintHorizontal_bias="0.51" />
 
     <TextView
         android:id="@+id/result_text"

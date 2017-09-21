@@ -17,10 +17,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RockPaperScissorsActivity"
+            android:name=".OnePlayerRockPaperScissorsActivity"
             android:label="@string/title_activity_rock_paper_scissors"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".OnePlayerNameInputActivity"></activity>
+        <activity android:name=".OnePlayerNameInputActivity" />
+        <activity android:name=".TwoPlayerNameInputActivity" />
+        <activity android:name=".TwoPlayerRockPaperScissorsActivity" />
+        <activity android:name=".TwoPlayerRockPaperScissorsPlayerTwoGoActivity"></activity>
     </application>
 
 </manifest>
