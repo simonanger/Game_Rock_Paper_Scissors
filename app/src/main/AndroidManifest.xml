@@ -18,12 +18,14 @@
         </activity>
         <activity
             android:name=".OnePlayerRockPaperScissorsActivity"
-            android:label="@string/title_activity_rock_paper_scissors"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".OnePlayerNameInputActivity" />
-        <activity android:name=".TwoPlayerNameInputActivity" />
-        <activity android:name=".TwoPlayerRockPaperScissorsActivity" />
-        <activity android:name=".TwoPlayerRockPaperScissorsPlayerTwoGoActivity"></activity>
+            android:parentActivityName=".WelcomeActivity"/>
+        <activity android:name=".OnePlayerNameInputActivity"
+            android:parentActivityName=".WelcomeActivity"/>
+        <activity android:name=".TwoPlayerNameInputActivity"
+            android:parentActivityName=".WelcomeActivity"/>
+        <activity android:name=".TwoPlayerRockPaperScissorsActivity"
+            android:parentActivityName=".WelcomeActivity"/>
+
     </application>
 
 </manifest>
