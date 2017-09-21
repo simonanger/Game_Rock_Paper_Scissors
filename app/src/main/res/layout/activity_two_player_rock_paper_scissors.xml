@@ -64,10 +64,11 @@
         android:text="@string/select_guide_text_player_one"
         android:textAlignment="center"
         android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paper_button"
-        app:layout_constraintHorizontal_bias="0.51" />
+        app:layout_constraintTop_toBottomOf="@+id/paper_button" />
 
     <TextView
         android:id="@+id/result_text"

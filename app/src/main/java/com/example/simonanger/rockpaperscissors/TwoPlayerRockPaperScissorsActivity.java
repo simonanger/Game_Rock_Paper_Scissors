@@ -95,14 +95,14 @@ public class TwoPlayerRockPaperScissorsActivity extends AppCompatActivity {
             return;
         }
 
-        String resultMessage = setFirstName + " played " + playerChoices.get(0).name() + "!\n"
-                + setSecondName + " played " + playerChoices.get(1).name() + "!\n"
+        String resultMessage = setFirstName + " played " + playerChoices.get(0).name().toLowerCase() + "!\n"
+                + setSecondName + " played " + playerChoices.get(1).name().toLowerCase() + "!\n"
                 + winnerMessage;
 
 
 
         resultText.setText(resultMessage);
-        selectGuideText.setText("To play again, pass back to player one and make a choice");
+        selectGuideText.setText("To play again, \n pass back to player one and make a choice");
     }
 }
 

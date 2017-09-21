@@ -74,8 +74,8 @@ public class OnePlayerRockPaperScissorsActivity extends AppCompatActivity {
             return;
         }
 
-        String resultMessage = "You played " + playerHand.name() + "!\n"
-                + "Computer played " + computerHand.name() + "!\n"
+        String resultMessage = "You played " + playerHand.name().toLowerCase() + "!\n"
+                + "Computer played " + computerHand.name().toLowerCase() + "!\n"
                 + winnerMessage;
 
 

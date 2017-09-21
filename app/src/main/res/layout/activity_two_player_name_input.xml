@@ -47,6 +47,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/player_two_click_here_hint"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:onClick="onGameButtonClicked"
         app:layout_constraintHorizontal_bias="0.503"
